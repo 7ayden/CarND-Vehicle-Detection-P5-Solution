@@ -20,7 +20,6 @@ The goals / steps of this project are the following:
 [video1]: ./project_video.mp4
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
----
 
 ### Histogram of Oriented Gradients (HOG)
 
