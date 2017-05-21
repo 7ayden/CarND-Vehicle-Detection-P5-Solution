@@ -1,3 +1,8 @@
+### detect.py contains the workflow of reading training data, extracting features, and processing a video.
+### functions.py contains the helper functions used along the way (i.e., functions to extract features, create heatmaps, draw bounding boxes, etc).
+### The final output video, with cars detected, is project_output.mp4.
+
+
 **Vehicle Detection Project**
 
 The goals / steps of this project are the following:
@@ -25,7 +30,9 @@ The goals / steps of this project are the following:
 
 #### 1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 
-The code for this step is contained in the first code cell of the IPython notebook (or in lines # through # of the file called `some_file.py`).  
+The function that extracts HOG features is called get_hog_features, at line 8 of functions.py.
+During the training step, HOG features are extracted within the extract_features function, which is defined
+at line 51 of functions.py and called at lines 85 and 93 of detect.py.
 
 I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
 
