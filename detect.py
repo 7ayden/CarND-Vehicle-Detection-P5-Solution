@@ -50,7 +50,7 @@ shuffle( notcars )
 # I also take this opportunity to ensure that the "car"
 # and "not car" sets are the same size, which is beneficial
 # when training a support vector machine.
-sample_size = 10
+sample_size = 8000
 cars = cars[0:sample_size]
 notcars = notcars[0:sample_size]
 
@@ -248,4 +248,4 @@ clip = VideoFileClip('test_video.mp4')
 # Process the input video to create the output clip
 output_clip = clip.fl_image( pipeline )
 # Write the output clip
-# output_clip.write_videofile( 'project_output.mp4', audio=False)
+output_clip.write_videofile( 'test_output.mp4', audio=False)
