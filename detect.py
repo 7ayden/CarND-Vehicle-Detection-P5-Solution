@@ -225,17 +225,17 @@ def pipeline( input_image ):
     # on the final output image
     tracking_image = draw_labeled_bboxes( draw_image, labels )
 
-    fig = plt.figure()
-    plt.subplot(221)
-    plt.imshow(heatmap, cmap='hot')
-    plt.subplot(222)
-    plt.imshow( heat_running.get_running_heatmap(), cmap='hot' )
-    plt.subplot(223)
-    plt.imshow(labels[0], cmap='gray')
-    plt.subplot(224)
-    plt.imshow(tracking_image)
-    fig.tight_layout()
-    plt.show()
+    # fig = plt.figure()
+    # plt.subplot(221)
+    # plt.imshow(heatmap, cmap='hot')
+    # plt.subplot(222)
+    # plt.imshow( heat_running.get_running_heatmap(), cmap='hot' )
+    # plt.subplot(223)
+    # plt.imshow(labels[0], cmap='gray')
+    # plt.subplot(224)
+    # plt.imshow(tracking_image)
+    # fig.tight_layout()
+    # plt.show()
    
     return tracking_image
 
@@ -244,8 +244,8 @@ def pipeline( input_image ):
 #     single_image_pipeline( image )
 
 # Open the input video
-clip = VideoFileClip('test_video.mp4')
+clip = VideoFileClip('project_video.mp4')
 # Process the input video to create the output clip
 output_clip = clip.fl_image( pipeline )
 # Write the output clip
-output_clip.write_videofile( 'test_output.mp4', audio=False)
+output_clip.write_videofile( 'project_output.mp4', audio=False)
