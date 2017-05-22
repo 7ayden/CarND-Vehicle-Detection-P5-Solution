@@ -20,7 +20,7 @@ The goals / steps of this project are the following:
 [car]: ./vehicles/vehicles/KITTI_extracted/1.png
 [notcar]: ./non-vehicles/non-vehicles/GTI/image7.png
 [hog_output]: ./output_images/hog_output.png
-[windows96]: ./output_images/windows96.jpg
+[windows96]: ./output_images/windows96.png
 [cars64]: ./output_images/cars64.png
 [cars160]: ./output_images/cars160.png
 [1frameheatmap]: ./output_images/1frameheatmap.png

@@ -200,17 +200,19 @@ def pipeline( input_image ):
                                      hist_feat=hist_feat, 
                                      hog_feat=hog_feat)                       
         
-        # window_img = draw_boxes(draw_image, windows, color=(0, 0, 255), thick=3) 
-        # hot_window_img = draw_boxes(draw_image, hot_windows, color=(0, 0, 255), thick=3)                    
+        window_img = draw_boxes(draw_image, windows, color=(0, 0, 255), thick=3) 
+        hot_window_img = draw_boxes(draw_image, hot_windows, color=(0, 0, 255), thick=3)                    
 
         # Add heatmap for this window size to the heatmap for this frame
         add_heat( heatmap, hot_windows )
    
-        # plt.figure()
-        # plt.imshow(window_img)
-        # plt.figure()
-        # plt.imshow(hot_window_img)
-        # plt.show()
+        plt.figure()
+        plt.imshow(window_img)
+        plt.tight_layout()
+        plt.figure()
+        plt.imshow(hot_window_img)
+        plt.tight_layout()
+        plt.show()
 
     # Add the heatmap for this frame to the heat_running object's queue of
     # the last n_history frames.  This call also forces heat_running
