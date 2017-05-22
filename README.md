@@ -168,10 +168,10 @@ Most of the parameters I used had been chosen in earlier experimentation in the 
 the linear SVC on the test set of my data.  Trying different parameters to get good performance on the test set was a relatively 
 quick process, so achieving high accuracy on the test set was not difficult.  The main difficulty arose when my SVC had trouble 
 recognizing the black car in the test video.  I eventually discovered that omitting the color histogram from the features
-allowed the SVC to recognize the black car more robustly, even though it reduced the SVC's accuracy on the test set.
+allowed the SVC to recognize the black car more consistently, even though it reduced the SVC's accuracy on the test set.
 
 My pipeline seems robust overall, at least on the videos provided.  
-In the final output, all cars are fairly tracked consistently, and false
+In the final output, all cars are tracked, and false
 detections are minimal.  However, the pipeline does briefly lose track 
 of the white car at a certain distance range, then find it again (see 0:24-0:26 of project_output.mp4).  
 This could be because there
@@ -180,14 +180,15 @@ where the car may be too small to be identified by the
 96x96 windows but too large to be identified by the 64x64 windows.  I could probably improve this by searching a finer range 
 of window scales with a greater overlap fraction.
 
-The biggest problem with my pipeline is its relatively high computational cost.  On my PC, it took about 40 minutes
+The biggest weakness of my pipeline is its relatively high computational cost.  On my PC, it took about 40 minutes
 to process the project video. For simplicity, I initially wrote the pipeline 
-such that after selecting each search window, it downsamples to 64x64, then creates a new HOG.   A more efficient alternative
+such that after selecting each search window, it samples to 64x64, then creates a new HOG.   A more efficient alternative
 would be to compute
 the HOG once for an entire image, then for each search window, take the preexisting HOG and interpolate it to a size corresponding 
 to a 64x64 image, as described in the lessons.  If I had to do futher experimentation with the final project video, I would implement
 this method.  However, after testing on test_video.mp4, my pipeline created a satisfactory output for project_video.mp4 on the first
-try.  Creating a single HOG and interpolating seems to involve a lot of nitpicky indexing math, and I don't want to spend additional 
-time experimenting and potentially breaking things when I already have a pipeline that works.
+try.  Rewriting to use a single HOG with interpolation seems like something I could easily get wrong at first, and involve a lot
+of breaking and fixing things.  I don't want to spend additional hours tinkering with my pipeline when I already have something 
+that works.
 
 
