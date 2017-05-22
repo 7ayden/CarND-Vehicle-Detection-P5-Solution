@@ -20,13 +20,13 @@ The goals / steps of this project are the following:
 [car]: ./vehicles/vehicles/KITTI_extracted/1.png
 [notcar]: ./non-vehicles/non-vehicles/GTI/image7.png
 [hog_output]: ./output_images/hog_output.png
-[windows96]: ./output_images/sliding_window.jpg
-[cars64]: ./output_images/bboxes_and_heat.png
-[cars160]: ./output_images/labels_map.png
-[1frameheatmap]: ./output_images/output_bboxes.png
-[summedheatmap]: ./output_images/output_bboxes.png
-[labeledheatmap]: ./output_images/output_bboxes.png
-[labeled_bounding_boxes]: ./output_images/output_bboxes.png
+[windows96]: ./output_images/windows96.jpg
+[cars64]: ./output_images/cars64.png
+[cars160]: ./output_images/cars160.png
+[1frameheatmap]: ./output_images/1frameheatmap.png
+[summedheatmap]: ./output_images/summedheatmap.png
+[labeledheatmap]: ./output_images/labeledheatmap.png
+[labeled_bounding_boxes]: ./output_images/labeled_bounding_boxes.png
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
 
@@ -93,7 +93,7 @@ test set to around 98%, it caused the SVC to recognize the black and white cars 
 The final parameters I used can be found at
 line 58 of detect.py. 
 
-###Sliding Window Search
+### Sliding Window Search
 
 #### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
@@ -114,7 +114,7 @@ I optimized my classifier as described in "3. Describe how (and identify where i
 As an example of the performance of different window sizes, 
 here is a test image showing car regions identified by the 64x64 sliding windows.
 
-![alt text][cars64]
+![Car regions identified by 64x64 windows][cars64]
 
 Here is that same image showing the car regions identified by 160x160 sliding windows:
 

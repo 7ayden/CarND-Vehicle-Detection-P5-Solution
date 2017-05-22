@@ -66,13 +66,6 @@ spatial_feat = True # Spatial features on or off
 hist_feat = False # Histogram features on or off
 hog_feat = True # HOG features on or off
 
-image = mpimg.imread('./vehicles/vehicles/KITTI_extracted/1.png')
-features, hogimage = get_hog_features(image[:,:,1],
-		    orient, pix_per_cell, cell_per_block,
-		    vis=True, feature_vec=True)
-plt.imshow(hogimage, cmap='gray')
-plt.show()
-quit()
 # The following two hyperparameters are used to remove transient
 # false positives from the heatmap of pixels identified as containing 
 # a car.
@@ -141,7 +134,7 @@ print('Test Accuracy of SVC = ', round(svc.score(X_test, y_test), 4))
 # Check the prediction time for a single test image
 t=time.time()
 
-# image = mpimg.imread('test_images/test6.jpg')
+image = mpimg.imread('test_images/test6.jpg')
 # print( image.dtype)
 # print( image.shape )
 
@@ -207,7 +200,7 @@ def pipeline( input_image ):
                                      hist_feat=hist_feat, 
                                      hog_feat=hog_feat)                       
         
-        # window_img = draw_boxes(draw_image, windows, color=(0, 0, 255), thick=3)                    
+        # window_img = draw_boxes(draw_image, windows, color=(0, 0, 255), thick=3) 
         # hot_window_img = draw_boxes(draw_image, hot_windows, color=(0, 0, 255), thick=3)                    
 
         # Add heatmap for this window size to the heatmap for this frame
@@ -247,9 +240,11 @@ def pipeline( input_image ):
 # for image in clip.iter_frames():
 #     single_image_pipeline( image )
 
+pipeline( image )
+
 # Open the input video
-clip = VideoFileClip('project_video.mp4')
+# clip = VideoFileClip('project_video.mp4')
 # Process the input video to create the output clip
-output_clip = clip.fl_image( pipeline )
+# output_clip = clip.fl_image( pipeline )
 # Write the output clip
-output_clip.write_videofile( 'project_output.mp4', audio=False)
+# output_clip.write_videofile( 'project_output.mp4', audio=False)
