@@ -4,6 +4,10 @@
 
 **The final output video, with cars detected, is project_output.mp4.**
 
+Unfortunately the Udacity submission process has a limit on the number of files permitted in the repository, which means I had to upload
+the training data as zip archives.  If you clone this repository, you must first extract the archives "vehicles" and "non_vehicles"
+to the main project directory before detect.py can be run.
+
 
 **Vehicle Detection Project**
 
@@ -17,8 +21,8 @@ The goals / steps of this project are the following:
 * Estimate a bounding box for vehicles detected.
 
 [//]: # (Image References)
-[car]: ./vehicles/vehicles/KITTI_extracted/1.png
-[notcar]: ./non-vehicles/non-vehicles/GTI/image7.png
+[car]: ./output_images/1.png
+[notcar]: ./output_images/image7.png
 [hog_output]: ./output_images/hog_output.png
 [windows96]: ./output_images/windows96.png
 [cars64]: ./output_images/cars64.png
