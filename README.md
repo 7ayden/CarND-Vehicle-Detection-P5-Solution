@@ -150,9 +150,9 @@ I experimented with a small range of values for the number of history frames to 
 heatmap was set to zero.  I ended up using a history of 5 frames and a threshold of 7, which proved reliable for both test.mp4 
 and project_video.mp4.
 
-**Top left    :**  example of a heatmap from an individual frame of test_video.mp4.  
-**Top right   :**  the summed heatmap from that frame and the four previous frames.  
-**Bottom left :**  output of `scipy.ndimage.measurements.label()` on the history-summed and thresholded heatmap.  
+**Top left:**  example of a heatmap from an individual frame of test_video.mp4.  
+**Top right:**  the summed heatmap from that frame and the four previous frames.  
+**Bottom left:**  output of `scipy.ndimage.measurements.label()` on the history-summed and thresholded heatmap.  
 **Bottom right:**  bounding boxes of the labeled regions drawn onto the current frame.  
 ![Heatmaps and resulting detections][heatmaps]  
 A pair of spurious detections can be seen in the instantaneous heatmap (top left) but these have a much smaller
