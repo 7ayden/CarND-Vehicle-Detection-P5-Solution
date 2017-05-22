@@ -23,7 +23,7 @@ The goals / steps of this project are the following:
 [windows96]: ./output_images/windows96.png
 [cars64]: ./output_images/cars64.png
 [cars160]: ./output_images/cars160.png
-[heatmaps_and_bounding_boxes]: ./output_images/heatmaps.png
+[heatmaps]: ./output_images/heatmaps.png
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
 
