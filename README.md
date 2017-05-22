@@ -156,8 +156,8 @@ Bottom left:  output of `scipy.ndimage.measurements.label()` on the history-summ
 Bottom right:  bounding boxes of the labeled regions drawn onto the current frame.
 ![Heatmaps and resulting detections][heatmaps]
 
-A pair of spurious detections can be seen in the instantaneous heatmap (top right) but these have a much smaller
-relative intensity in the history-summed heatmap (top left) and are eliminated by thresholding.  Therefore,
+A pair of spurious detections can be seen in the instantaneous heatmap (top left) but these have a much smaller
+relative intensity in the history-summed heatmap (top right) and are eliminated by thresholding.  Therefore,
 the false-detection regions are not labeled as car regions or drawn on the output frame.
 
 ---
