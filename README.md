@@ -47,11 +47,13 @@ called from `extract_features` and `single_img_features`.
 
 The training set contains of several thousand 64x64 images of cars of various models and colors, taken 
 from different angles.  Here is an example:
+
 ![car from training set][car]
 
 The training set also contains several thousand "non-car" images, which are 64x64 pictures of "non-car"
 features such as lane lines, trees, empty roadway, signs, etc. that are typically encountered while driving.  
 Here is an example of a "non-car" image:
+
 ![not car from training set][notcar]
 
 My feature extraction functions included options to explore different color spaces and 
