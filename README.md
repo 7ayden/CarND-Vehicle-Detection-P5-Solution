@@ -23,10 +23,7 @@ The goals / steps of this project are the following:
 [windows96]: ./output_images/windows96.png
 [cars64]: ./output_images/cars64.png
 [cars160]: ./output_images/cars160.png
-[1frameheatmap]: ./output_images/1frameheatmap.png
-[summedheatmap]: ./output_images/summedheatmap.png
-[labeledheatmap]: ./output_images/labeledheatmap.png
-[labeled_bounding_boxes]: ./output_images/labeled_bounding_boxes.png
+[heatmaps_and_bounding_boxes]: ./output_images/heatmaps_and_bounding_boxes.png
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
 
@@ -112,7 +109,7 @@ Here is an example of the set of windows produced for a window scale of 96x96:
 I optimized my classifier as described in "3. Describe how (and identify where in your code) you trained a classifier..." above.
 
 As an example of the performance of different window sizes, 
-here is a test image showing car regions identified by the 64x64 sliding windows.
+here is a test image showing car regions identified by the 64x64 sliding windows:
 
 ![Car regions identified by 64x64 windows][cars64]
 
@@ -153,18 +150,11 @@ I experimented with a small range of values for the number of history frames to 
 heatmap was set to zero.  I ended up using a history of 5 frames and a threshold of 7, which proved reliable for both test.mp4 
 and project_video.mp4.
 
-Here is an example of a heatmap from an individual frame of test.mp4:
-![Heatmap from one frame][1frameheatmap]
-
-Here is an example of a summed heatmap from 5 consecutive frames of test.mp4:
-![Summed heatmap][summedheatmap]
-
-Here is an example of the output of `scipy.ndimage.measurements.label()` on the history-summed heatmap:
-![labeled heatmap][labeledheatmap]
-
-Here is an example of the bounding boxes of the summed heatmap (from the current frame and the 4 previous frames) drawn onto the 
-corresponding frame of test.mp4:
-![bounding boxes of labeled regions][labeled_bounding_boxes]
+Top left:  example of a heatmap from an individual frame of test.mp4.
+Top right:  the summed heatmap from that frame and the four previous frames.
+Bottom left:  output of `scipy.ndimage.measurements.label()` on the history-summed and thresholded heatmap.
+Bottom right:  bounding boxes of the labeled regions drawn onto the current frame.
+![Heatmaps and resulting detections][heatmaps_and_bounding_boxes]
 
 ---
 

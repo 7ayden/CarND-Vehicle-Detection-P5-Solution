@@ -50,7 +50,7 @@ shuffle( notcars )
 # I also take this opportunity to ensure that the "car"
 # and "not car" sets are the same size, which is beneficial
 # when training a support vector machine.
-sample_size = 8000
+sample_size = 10
 cars = cars[0:sample_size]
 notcars = notcars[0:sample_size]
 
@@ -134,7 +134,7 @@ print('Test Accuracy of SVC = ', round(svc.score(X_test, y_test), 4))
 # Check the prediction time for a single test image
 t=time.time()
 
-image = mpimg.imread('test_images/test6.jpg')
+# image = mpimg.imread('test_images/test6.jpg')
 # print( image.dtype)
 # print( image.shape )
 
@@ -200,19 +200,11 @@ def pipeline( input_image ):
                                      hist_feat=hist_feat, 
                                      hog_feat=hog_feat)                       
         
-        window_img = draw_boxes(draw_image, windows, color=(0, 0, 255), thick=3) 
-        hot_window_img = draw_boxes(draw_image, hot_windows, color=(0, 0, 255), thick=3)                    
+        # window_img = draw_boxes(draw_image, windows, color=(0, 0, 255), thick=3) 
+        # hot_window_img = draw_boxes(draw_image, hot_windows, color=(0, 0, 255), thick=3)                    
 
         # Add heatmap for this window size to the heatmap for this frame
         add_heat( heatmap, hot_windows )
-   
-        plt.figure()
-        plt.imshow(window_img)
-        plt.tight_layout()
-        plt.figure()
-        plt.imshow(hot_window_img)
-        plt.tight_layout()
-        plt.show()
 
     # Add the heatmap for this frame to the heat_running object's queue of
     # the last n_history frames.  This call also forces heat_running
@@ -223,7 +215,7 @@ def pipeline( input_image ):
     # Get a copy of the current total heatmap (sum of last n_history heatmaps)
     thresholded_total_heatmap = np.copy( heat_running.get_running_heatmap() )
     # Threshold the total heatmap to reduce false detections
-    thresholded_heatmap[thresholded_total_heatmap <= threshold] = 0
+    thresholded_total_heatmap[thresholded_total_heatmap <= threshold] = 0
  
     # Label each unique island region of the thresholded heatmap
     # as a separate car
@@ -233,8 +225,17 @@ def pipeline( input_image ):
     # on the final output image
     tracking_image = draw_labeled_bboxes( draw_image, labels )
 
-    # plt.imshow( tracking_image, cmap='gray' )
-    # plt.show()
+    fig = plt.figure()
+    plt.subplot(221)
+    plt.imshow(heatmap, cmap='hot')
+    plt.subplot(222)
+    plt.imshow( heat_running.get_running_heatmap(), cmap='hot' )
+    plt.subplot(223)
+    plt.imshow(labels[0], cmap='gray')
+    plt.subplot(224)
+    plt.imshow(tracking_image)
+    fig.tight_layout()
+    plt.show()
    
     return tracking_image
 
@@ -242,11 +243,9 @@ def pipeline( input_image ):
 # for image in clip.iter_frames():
 #     single_image_pipeline( image )
 
-pipeline( image )
-
 # Open the input video
-# clip = VideoFileClip('project_video.mp4')
+clip = VideoFileClip('test_video.mp4')
 # Process the input video to create the output clip
-# output_clip = clip.fl_image( pipeline )
+output_clip = clip.fl_image( pipeline )
 # Write the output clip
 # output_clip.write_videofile( 'project_output.mp4', audio=False)
