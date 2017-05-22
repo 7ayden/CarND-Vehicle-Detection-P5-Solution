@@ -23,7 +23,7 @@ The goals / steps of this project are the following:
 [windows96]: ./output_images/windows96.png
 [cars64]: ./output_images/cars64.png
 [cars160]: ./output_images/cars160.png
-[heatmaps_and_bounding_boxes]: ./output_images/heatmaps_and_bounding_boxes.png
+[heatmaps_and_bounding_boxes]: ./output_images/heatmaps.png
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
 
@@ -154,7 +154,7 @@ Top left:  example of a heatmap from an individual frame of test_video.mp4.
 Top right:  the summed heatmap from that frame and the four previous frames.
 Bottom left:  output of `scipy.ndimage.measurements.label()` on the history-summed and thresholded heatmap.
 Bottom right:  bounding boxes of the labeled regions drawn onto the current frame.
-![Heatmaps and resulting detections][heatmaps_and_bounding_boxes]
+![Heatmaps and resulting detections][heatmaps]
 
 A pair of spurious detections can be seen in the instantaneous heatmap (top right) but these have a much smaller
 relative intensity in the history-summed heatmap (top left) and are eliminated by thresholding.  Therefore,
