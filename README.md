@@ -17,8 +17,8 @@ The goals / steps of this project are the following:
 * Estimate a bounding box for vehicles detected.
 
 [//]: # (Image References)
-[car]: ./examples/car_not_car.png
-[notcar]: ./examples/HOG_example.jpg
+[car]: ./vehicles/vehicles/KITTI_extracted/1.png
+[notcar]: ./non-vehicles/non-vehicles/GTI/image7.png
 [hog_output]: ./examples/sliding_windows.jpg
 [windows96]: ./examples/sliding_window.jpg
 [cars64]: ./examples/bboxes_and_heat.png
@@ -45,13 +45,16 @@ the intensities of each color channel present in the image.  `bin_spatial`, at l
 and `color_hist`, at line 39 of functions.py, computes the histogram of color intensities.  Both `bin_spatial` and `color_hist` are also
 called from `extract_features` and `single_img_features`.
 
-Here is an example of a car image from the training set: 
+The training set contains of several thousand 64x64 images of cars of various models and colors, taken 
+from different angles.  Here is an example:
 ![car from training set][car]
 
-Here is an example of a non-car image from the training set
+The training set also contains several thousand "non-car" images, which are 64x64 pictures of "non-car"
+features such as lane lines, trees, empty roadway, signs, etc. that are typically encountered while driving.  
+Here is an example of a "non-car" image:
 ![not car from training set][notcar]
 
-My feeature extraction functions included options to explore different color spaces and 
+My feature extraction functions included options to explore different color spaces and 
 different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).
 This proved useful when constructing an image processing pipeline later (I was able to choose the 
 best parameters by trial and error).
@@ -62,7 +65,9 @@ Here is an example of a HOG image of the above car image using the `RGB` color s
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
-I had already tried various combinations of HOG parameters when using the HOG in the quizzes, so I simply transferred those parameters over.  They worked well.
+I had already tried various combinations of HOG parameters when using the HOG in the quizzes, based on how accurately an SVM
+trained using those HOG parameters performed on a test set of data.  I transferred those parameters over and they performed
+well.
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
