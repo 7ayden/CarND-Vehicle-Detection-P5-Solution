@@ -19,14 +19,14 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 [car]: ./vehicles/vehicles/KITTI_extracted/1.png
 [notcar]: ./non-vehicles/non-vehicles/GTI/image7.png
-[hog_output]: ./examples/sliding_windows.jpg
-[windows96]: ./examples/sliding_window.jpg
-[cars64]: ./examples/bboxes_and_heat.png
-[cars160]: ./examples/labels_map.png
-[1frameheatmap]: ./examples/output_bboxes.png
-[summedheatmap]: ./examples/output_bboxes.png
-[labeledheatmap]: ./examples/output_bboxes.png
-[labeled_bounding_boxes]: ./examples/output_bboxes.png
+[hog_output]: ./output_images/hog_output.png
+[windows96]: ./output_images/sliding_window.jpg
+[cars64]: ./output_images/bboxes_and_heat.png
+[cars160]: ./output_images/labels_map.png
+[1frameheatmap]: ./output_images/output_bboxes.png
+[summedheatmap]: ./output_images/output_bboxes.png
+[labeledheatmap]: ./output_images/output_bboxes.png
+[labeled_bounding_boxes]: ./output_images/output_bboxes.png
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
 
@@ -61,7 +61,8 @@ different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `ce
 This proved useful when constructing an image processing pipeline later (I was able to choose the 
 best parameters by trial and error).
 
-Here is an example of a HOG image of the above car image using the `RGB` color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
+Here is a visualization of a HOG for the above car image,
+ using color channel G in RGB color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
 
 ![hog output][hog_output]
 

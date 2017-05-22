@@ -66,6 +66,13 @@ spatial_feat = True # Spatial features on or off
 hist_feat = False # Histogram features on or off
 hog_feat = True # HOG features on or off
 
+image = mpimg.imread('./vehicles/vehicles/KITTI_extracted/1.png')
+features, hogimage = get_hog_features(image[:,:,1],
+		    orient, pix_per_cell, cell_per_block,
+		    vis=True, feature_vec=True)
+plt.imshow(hogimage, cmap='gray')
+plt.show()
+quit()
 # The following two hyperparameters are used to remove transient
 # false positives from the heatmap of pixels identified as containing 
 # a car.
